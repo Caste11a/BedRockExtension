@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Extensibility.Sdk" Version="17.9.2092" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.VisualStudio.Extensibility.Build" Version="17.9.2092" PrivateAssets="all" />
+
+
+     <!-- AWS SDK (3.x) -->
+    <PackageReference Include="AWSSDK.Core" Version="3.*" />
+    <PackageReference Include="AWSSDK.BedrockRuntime" Version="3.*" />
+  </ItemGroup>
+
+  <!-- Remote UI の XAML は EmbeddedResource 扱いにする -->
+  <ItemGroup>
+    <EmbeddedResource Include="UI\BedrockChatContent.xaml" />
+    <Page Remove="UI\BedrockChatContent.xaml" />
+  </ItemGroup>
+</Project>
